@@ -1,4 +1,4 @@
-FROM adhoc/odoo-ubuntu:9.0
+FROM jobiols/odoo-ubuntu:9.0
 MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
 
 USER root

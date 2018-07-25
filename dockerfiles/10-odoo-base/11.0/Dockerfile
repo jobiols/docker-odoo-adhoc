@@ -1,4 +1,4 @@
-FROM adhoc/odoo-ubuntu:11.0
+FROM jobiols/odoo-ubuntu:11.0
 MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
 
 USER root
@@ -14,8 +14,9 @@ RUN apt-get -qq update && apt-get install -yqq --no-install-recommends \
     && locale-gen en_US.UTF-8 && update-locale \
     && locale-gen es_AR.UTF-8 && update-locale \
     && echo 'LANG="en_US.UTF-8"' > /etc/default/locale \
-    && pip3 install --no-cache-dir --upgrade pip setuptools \
-    && pip3 install --no-cache-dir  num2words wheel vobject qrcode git+https://github.com/OCA/openupgradelib/@master \
+    && pip3 install --no-cache-dir --upgrade pip setuptools
+
+RUN pip3 install --no-cache-dir  num2words wheel vobject qrcode git+https://github.com/OCA/openupgradelib/@master \
     && apt-get purge -yqq build-essential '*-dev' \
     && apt-get -yqq autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
