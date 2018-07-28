@@ -56,7 +56,7 @@ CMD ["odoo"]
 
 # Variables used by the launch scripts
 ENV \
-    ODOO_SERVER=odoo.py \
+    ODOO_SERVER=odoo \
     ODOO_CONF=/opt/odoo/etc/odoo.conf \
     FIXDBS=False \
     WAIT_PG=True \
@@ -74,7 +74,6 @@ ENV \
     PGHOST=db \
     WORKERS=6 \
     ADMIN_PASSWORD=admin \
-    SERVER_MODE=test \
     DISABLE_SESSION_GC=false \
     PROXY_MODE=True \
     WITHOUT_DEMO=True \

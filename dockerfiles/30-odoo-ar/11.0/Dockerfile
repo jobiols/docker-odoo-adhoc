@@ -15,6 +15,6 @@ WORKDIR /
 # RUN chmod 777 -R /usr/local/lib/python3/dist-packages/pyafipws/
 
 # seteamos SERVER_WIDE_MODULES de los modulos incluidos
-ENV SERVER_WIDE_MODULES web,server_mode,database_tools,
+#ENV SERVER_WIDE_MODULES web,server_mode,database_tools,
 
 USER odoo
