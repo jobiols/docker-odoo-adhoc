@@ -10,7 +10,7 @@ USER root
 #RUN python get_addons.py ${EXTRA_ADDONS} --depth=1 --sources_file=adhoc-sources.txt
 #WORKDIR /
 
-RUN pip install "xlrd == 1.1.0"
+RUN pip3 install markdown
 
 # scripts to extract sources to host
 COPY ./extract_dist-packages.sh /

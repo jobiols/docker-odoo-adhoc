@@ -3,7 +3,8 @@ MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
 
 USER root
 
-# Other requirements, useful tools and recommendations to run Odoo (libldap2-dev libsasl2-dev re recommended by odoo here https://www.odoo.com/documentation/11.0/setup/install.html). libcups2-dev is for aeroo. Then install locales and later clean everything
+# Other requirements, useful tools and recommendations to run Odoo (libldap2-dev
+# libsasl2-dev re recommended by odoo here https://www.odoo.com/documentation/11.0/setup/install.html). libcups2-dev is for aeroo. Then install locales and later clean everything
 RUN apt-get -qq update && apt-get install -yqq --no-install-recommends \
     git nano htop ssh wget unzip iputils-ping telnet \
     postgresql-client-9.6 \
@@ -20,6 +21,15 @@ RUN pip3 install --no-cache-dir  num2words wheel vobject qrcode git+https://gith
     && apt-get purge -yqq build-essential '*-dev' \
     && apt-get -yqq autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+COPY ./requirements.txt /
+COPY ./requirements1.txt /
+
+RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements1.txt
+
+#PyAfipWs==3.5.0
+RUN git clone -b py3k https://github.com/reingart/pyafipws.git /usr/lib/python3.5/dist-packages/pyafipws
 
 # Generate locale (es_AR for right odoo es_AR language config, and C.UTF-8 for postgres and general locale data). TODO better C.UTF-8 or en_US.UTF-8?
 ENV LANG es_AR.UTF-8  
