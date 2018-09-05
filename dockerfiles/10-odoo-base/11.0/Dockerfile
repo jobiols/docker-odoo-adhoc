@@ -1,5 +1,5 @@
 FROM jobiols/odoo-ubuntu:11.0
-MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
+MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 
 USER root
 
@@ -30,6 +30,10 @@ RUN pip3 install -r requirements1.txt
 
 #PyAfipWs==3.5.0
 RUN git clone -b py3k https://github.com/reingart/pyafipws.git /usr/lib/python3.5/dist-packages/pyafipws
+
+#aeroolib
+RUN pip3 install git+https://github.com/aeroo/aeroolib.git
+RUN pip3 install git+https://github.com/aeroo/currency2text.git
 
 # Generate locale (es_AR for right odoo es_AR language config, and C.UTF-8 for postgres and general locale data). TODO better C.UTF-8 or en_US.UTF-8?
 ENV LANG es_AR.UTF-8  
