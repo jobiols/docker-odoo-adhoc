@@ -35,11 +35,6 @@ RUN git clone -b py3k https://github.com/reingart/pyafipws.git /usr/lib/python3.
 RUN pip3 install git+https://github.com/aeroo/aeroolib.git
 RUN pip3 install git+https://github.com/aeroo/currency2text.git
 
-# Generate locale (es_AR for right odoo es_AR language config, and C.UTF-8 for postgres and general locale data). TODO better C.UTF-8 or en_US.UTF-8?
-ENV LANG es_AR.UTF-8  
-ENV LANGUAGE es_AR:es:en_US:en  
-ENV LC_ALL es_AR.UTF-8
-
 # Make auto_install = False for various modules
 RUN sed  -i  "s/'auto_install': True/'auto_install': False/" /usr/lib/python3/dist-packages/odoo/addons/procurement_jit/__manifest__.py
 
