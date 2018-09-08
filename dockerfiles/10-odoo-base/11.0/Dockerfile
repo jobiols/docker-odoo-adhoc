@@ -26,18 +26,19 @@ RUN pip3 install --no-cache-dir  num2words wheel vobject qrcode git+https://gith
 RUN apt-get update -qq
 RUN apt-get install build-essential python3-dev python-dev libssl-dev swig -y -qq
 
+COPY ./requirements_aeroo_reports.txt /
+COPY ./requirements_OCA_web.txt /
+COPY ./requirements_odoo-argentina.txt /
 COPY ./requirements.txt /
-COPY ./requirements1.txt /
 
-RUN pip3 install -r requirements.txt
-RUN pip3 install -r requirements1.txt
+RUN pip3 install -r /requirements_aeroo_reports.txt
+RUN pip3 install -r /requirements_OCA_web.txt
+RUN pip3 install -r /requirements_odoo-argentina.txt
+RUN pip3 install -r /requirements.txt
 
-#PyAfipWs==3.5.0
-RUN git clone -b py3k https://github.com/reingart/pyafipws.git /usr/lib/python3.5/dist-packages/pyafipws
-
-#aeroolib
-RUN pip3 install git+https://github.com/aeroo/aeroolib.git
-RUN pip3 install git+https://github.com/aeroo/currency2text.git
+# crear cache para pyafipws
+RUN mkdir /usr/local/lib/python3.5/dist-packages/pyafipws/cache
+RUN chmod o+rw /usr/local/lib/python3.5/dist-packages/pyafipws/cache
 
 # Make auto_install = False for various modules
 RUN sed  -i  "s/'auto_install': True/'auto_install': False/" /usr/lib/python3/dist-packages/odoo/addons/procurement_jit/__manifest__.py

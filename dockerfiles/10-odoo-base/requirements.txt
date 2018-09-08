@@ -1,0 +1,2 @@
+# odoo general requirements
+phonenumbers
