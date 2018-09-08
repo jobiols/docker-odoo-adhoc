@@ -71,3 +71,4 @@ pickleshare
 Pillow
 property-manager
 protobuf
+M2Crypto

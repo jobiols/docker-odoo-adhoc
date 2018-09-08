@@ -22,6 +22,10 @@ RUN pip3 install --no-cache-dir  num2words wheel vobject qrcode git+https://gith
     && apt-get -yqq autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# requisites for M2Crypto
+RUN apt-get update -qq
+RUN apt-get install build-essential python3-dev python-dev libssl-dev swig -y -qq
+
 COPY ./requirements.txt /
 COPY ./requirements1.txt /
 
