@@ -1,5 +1,5 @@
-FROM adhoc/odoo-ar:9.0
-MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
+FROM jobiols/odoo-ar:9.0
+MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 
 USER root
 
@@ -10,12 +10,12 @@ USER root
 #RUN python get_addons.py ${EXTRA_ADDONS} --depth=1 --sources_file=adhoc-sources.txt
 #WORKDIR /
 
-RUN pip3 install markdown
+COPY ./requirements.txt /
+RUN pip install -r requirements.txt
 
 # scripts to extract sources to host
 COPY ./extract_dist-packages.sh /
 COPY ./extract_dist-local-packages.sh /
 COPY ./extract_extra-addons.sh /
-
 
 USER odoo

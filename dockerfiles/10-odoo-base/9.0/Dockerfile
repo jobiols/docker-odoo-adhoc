@@ -33,6 +33,9 @@ RUN pip install --upgrade setuptools
 RUN apt-get install -y python-gevent
 RUN pip install psycogreen
 
+# required for odoo ??
+RUN pip install qrcode pyusb>=1.0.0b1 python-chart pyserial
+
 ## Install pip dependencies for adhoc used odoo repositories
 # RUN pip install openupgradelib
 RUN pip install git+https://github.com/OCA/openupgradelib/@master

@@ -1,0 +1,7 @@
+markdown
+openpyxl
+gdata
+git+https://github.com/aeroo/aeroolib.git@5c27b23459c309cdae834d9c4d330742dca3038f
+# porque este commit rompe los reportes ods https://github.com/aeroo/aeroolib/pull/11
+# git+https://github.com/aeroo/aeroolib.git@py2.x
+pycups
