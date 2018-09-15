@@ -1,15 +1,16 @@
 FROM jobiols/odoo-ubuntu:8.0
-MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
+MAINTAINER Jorge Eduardo Obiols <jorge.obiols@gmail.com>
 
 USER root
 
 # Generate locale (es_AR for right odoo es_AR language config, and C.UTF-8 for postgres and general locale data)
 # TODO better C.UTF-8 or en_US.UTF-8?
+RUN apt-get clean && apt-get update && apt-get install -y locales
 RUN locale-gen en_US.UTF-8 && update-locale
 RUN locale-gen es_AR.UTF-8 && update-locale
 RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
-ENV LANG es_AR.UTF-8  
-ENV LANGUAGE es_AR:es:en_US:en  
+ENV LANG es_AR.UTF-8
+ENV LANGUAGE es_AR:es:en_US:en
 ENV LC_ALL es_AR.UTF-8
 
 # Install some deps (if we install with no-recommends later we have some errors with pip)
