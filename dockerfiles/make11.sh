@@ -9,3 +9,6 @@ cd ../../10-odoo-base/11.0
 #./make.sh
 cd ../../40-odoo-jeo/11.0
 ./make.sh
+cd ../../40-odoo-jeo/11.0.debug
+./make.sh	
+
