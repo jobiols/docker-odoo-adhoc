@@ -1,4 +1,4 @@
-FROM jobiols/odoo-ubuntu:11.0
+FROM jobiols/odoo-ubuntu:11.0e
 MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 
 USER root
