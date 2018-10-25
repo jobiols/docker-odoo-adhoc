@@ -15,6 +15,7 @@ Tags
 * 8.0
 * 9.0
 * 11.0
+* 12.0
 
 # About this Repo
 

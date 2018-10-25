@@ -1,4 +1,4 @@
-FROM jobiols/odoo-ubuntu:11.0
+FROM jobiols/odoo-ubuntu:12.0
 MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 
 USER root
@@ -28,17 +28,15 @@ RUN apt-get install build-essential python3-dev python-dev libssl-dev swig -y -q
 
 COPY ./requirements_aeroo_reports.txt /
 COPY ./requirements_OCA_web.txt /
-COPY ./requirements_odoo-argentina.txt /
-#COPY ./requirements.txt /
+#COPY ./requirements_odoo-argentina.txt /
 
 RUN pip3 install -r /requirements_aeroo_reports.txt
 RUN pip3 install -r /requirements_OCA_web.txt
-RUN pip3 install -r /requirements_odoo-argentina.txt
-#RUN pip3 install -r /requirements.txt
+#RUN pip3 install -r /requirements_odoo-argentina.txt
 
 # crear cache para pyafipws
-RUN mkdir /usr/local/lib/python3.5/dist-packages/pyafipws/cache
-RUN chmod o+rw /usr/local/lib/python3.5/dist-packages/pyafipws/cache
+#RUN mkdir /usr/local/lib/python3.5/dist-packages/pyafipws/cache
+#RUN chmod o+rw /usr/local/lib/python3.5/dist-packages/pyafipws/cache
 
 # Make auto_install = False for various modules
 RUN sed  -i  "s/'auto_install': True/'auto_install': False/" /usr/lib/python3/dist-packages/odoo/addons/procurement_jit/__manifest__.py

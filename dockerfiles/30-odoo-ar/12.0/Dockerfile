@@ -1,4 +1,4 @@
-FROM jobiols/odoo-oca:11.0
+FROM jobiols/odoo-oca:12.0
 MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
 
 USER root
