@@ -1,5 +1,5 @@
 FROM jobiols/odoo-oca:12.0
-MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
+MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 
 USER root
 

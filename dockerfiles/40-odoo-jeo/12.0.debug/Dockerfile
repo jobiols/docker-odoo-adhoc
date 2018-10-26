@@ -11,6 +11,7 @@ COPY ./extract_extra-addons.sh /
 # install wdb
 RUN pip install wdb.server
 
+# copio este entrypoint que arranca el server wdb
 COPY ./entrypoint.sh /opt/odoo/resources/entrypoint.sh
 
 USER odoo

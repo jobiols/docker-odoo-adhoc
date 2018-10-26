@@ -2,12 +2,14 @@
 cd 00-odoo/12.0/
 if ! ./make.sh;
 then
+	echo "Failed 00"
 	exit 1
 fi
 
 cd ../../10-odoo-base/12.0
 if ! ./make.sh;
 then
+    echo "Failed 10"
 	exit 1
 fi
 
@@ -18,12 +20,14 @@ fi
 cd ../../40-odoo-jeo/12.0
 if ! ./make.sh;
 then
+    echo "Failed 40"
 	exit 1
 fi
 
 cd ../../40-odoo-jeo/12.0.debug
 if ! ./make.sh;
-then 
+then
+    echo "Failed 40 debug"
 	exit 1
 fi
 
