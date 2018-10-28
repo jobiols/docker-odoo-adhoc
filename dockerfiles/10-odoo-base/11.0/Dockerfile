@@ -29,12 +29,12 @@ RUN apt-get install build-essential python3-dev python-dev libssl-dev swig -y -q
 COPY ./requirements_aeroo_reports.txt /
 COPY ./requirements_OCA_web.txt /
 COPY ./requirements_odoo-argentina.txt /
-#COPY ./requirements.txt /
+COPY ./requirements.txt /
 
 RUN pip3 install -r /requirements_aeroo_reports.txt
 RUN pip3 install -r /requirements_OCA_web.txt
 RUN pip3 install -r /requirements_odoo-argentina.txt
-#RUN pip3 install -r /requirements.txt
+RUN pip3 install -r /requirements.txt
 
 # crear cache para pyafipws
 RUN mkdir /usr/local/lib/python3.5/dist-packages/pyafipws/cache
