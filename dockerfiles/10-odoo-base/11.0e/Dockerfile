@@ -3,11 +3,16 @@ MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 
 USER root
 
+RUN apt-get update
+RUN echo "deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+RUN apt-get install curl gnupg1 -y
+RUN curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+
 # Other requirements, useful tools and recommendations to run Odoo (libldap2-dev
 # libsasl2-dev re recommended by odoo here https://www.odoo.com/documentation/11.0/setup/install.html). libcups2-dev is for aeroo. Then install locales and later clean everything
 RUN apt-get -qq update && apt-get install -yqq --no-install-recommends \
     git nano htop ssh wget unzip iputils-ping telnet \
-    postgresql-client-9.6 \
+    postgresql-client-11 \
     python3-dev build-essential \
     libldap2-dev libsasl2-dev \
     libcups2-dev \
