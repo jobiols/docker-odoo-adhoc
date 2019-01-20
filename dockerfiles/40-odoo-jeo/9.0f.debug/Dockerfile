@@ -7,7 +7,7 @@ USER root
 RUN pip install wdb.server
 
 # install pyfiscalprinter
-RUN git clone https://github.com/reingart/pyfiscalprinter.git /usr/local/lib/python2.7/dist-packages/pyfiscalprinter
+RUN pip install pyfiscalprinter
 
 # expose port for wdb
 EXPOSE 1984

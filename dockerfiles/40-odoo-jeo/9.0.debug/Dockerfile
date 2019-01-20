@@ -1,10 +1,15 @@
-FROM jobiols/odoo-jeo:9.0
+FROM jobiols/odoo-ar:9.0
 MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 
 USER root
 
+# scripts to extract sources to host
+COPY ./extract_dist-packages.sh /
+COPY ./extract_dist-local-packages.sh /
+COPY ./extract_extra-addons.sh /
+
 # install wdb
-RUN pip install 'wdb.server == 3.2.2'
+RUN pip install 'wdb.server'
 
 # expose port for wdb
 EXPOSE 1984
