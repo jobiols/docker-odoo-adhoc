@@ -29,3 +29,9 @@ then
     echo "Failed 40"
 	exit 1
 fi
+cd ../../40-odoo-jeo/9.0.debug
+if ! ./make.sh;
+then
+    echo "Failed 40 debug"
+	exit 1
+fi
