@@ -22,7 +22,7 @@ RUN apt-get -qq update && apt-get install -yqq --no-install-recommends \
     && echo 'LANG="en_US.UTF-8"' > /etc/default/locale \
     && pip3 install --no-cache-dir --upgrade pip setuptools
 
-RUN pip3 install --no-cache-dir  num2words wheel vobject qrcode git+https://github.com/OCA/openupgradelib/@master \
+RUN pip3 install num2words wheel vobject qrcode git+https://github.com/OCA/openupgradelib/@master \
     && apt-get purge -yqq build-essential '*-dev' \
     && apt-get -yqq autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -63,7 +63,7 @@ RUN mkdir -p /opt/odoo \
 # Mount persistent directories
 #VOLUME ["${DATA_DIR}", "${CUSTOM_ADDONS}"]
 
-USER odoo
+#USER odoo
 
 # rplace  entrypoint script and replace Odoo configuration file (new name)
 ENV RESOURCES /opt/odoo/resources/
