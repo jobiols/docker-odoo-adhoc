@@ -4,8 +4,9 @@ MAINTAINER Jorge Obiols <jorge.obiols@gmail.com>
 USER root
 
 # markdown support
-RUN git clone --depth 1  https://github.com/jobiols/Python-Markdown.git /python-markdown
-RUN cd /python-markdown && python setup.py install
+#RUN git clone --depth 1  https://github.com/Python-Markdown/markdown.git /python-markdown
+#RUN cd /python-markdown/markdown && python setup.py install
+RUN pip install markdown
 
 # pysftp support
 RUN set -x; \

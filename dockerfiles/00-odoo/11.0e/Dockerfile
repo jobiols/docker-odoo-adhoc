@@ -24,7 +24,7 @@ RUN set -x; \
         && cp wkhtmltox/bin/* /usr/local/bin/ \
         && cp -r wkhtmltox/share/man/man1 /usr/local/share/man/
 
-COPY ./odoo_11.0e_latest_all.deb /odoo.deb
+COPY ./odoo_11.0+e.latest_all.deb /odoo.deb
 
 # Install Odoo
 #ENV ODOO_VERSION 11.0
