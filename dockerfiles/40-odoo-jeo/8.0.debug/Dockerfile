@@ -12,12 +12,12 @@ COPY ./extract_extra-addons.sh /
 #COPY ./utils.py /usr/local/lib/python2.7/dist-packages/pyafipws/utils.py
 
 # copy patched entrypoint for launching wdb server
-COPY ./entrypoint.sh /opt/odoo/resources/entrypoint.sh
+#COPY ./entrypoint.sh /opt/odoo/resources/entrypoint.sh
 
 # install wdb
-RUN pip install wdb.server
+RUN pip install wdb
 
 # expose port for wdb
-EXPOSE 1984
+#EXPOSE 1984
 
 USER odoo

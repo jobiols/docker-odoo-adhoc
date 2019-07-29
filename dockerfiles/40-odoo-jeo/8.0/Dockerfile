@@ -13,7 +13,7 @@ RUN set -x; \
         apt-get update \
         && apt-get install -y --no-install-recommends \
             python-pip \
-        && pip install pysftp
+        && pip install pysftp pysimplesoap
 
 #COPY ./entrypoint.sh /opt/odoo/resources/entrypoint.sh
 
