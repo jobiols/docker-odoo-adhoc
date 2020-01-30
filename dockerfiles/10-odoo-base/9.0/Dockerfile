@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y postgresql-client-9.6
 # update pip and install setuptools (required for intalling pip requirements)
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
+RUN pip install psycopg2-binary
 
 # Workers and longpolling dependencies
 RUN apt-get install -y python-gevent

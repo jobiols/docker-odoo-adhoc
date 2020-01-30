@@ -7,7 +7,7 @@ Set of odoo images, starting from odoo-base, later odoo-oca, etc. The number pre
 Images summary
 --------------
 
-Each of this images has a tag 8.0, 9.0, 11.0 and can be found on docker registry. Images:
+Each of this images has a tag 8.0, 9.0 and can be found on docker registry. Images:
 
 * jobiols/odoo-ubuntu: fork of odoo docker official image but with ubuntu and controlled (by adhoc) nightly build date
 * jobiols/odoo-base: base image with custom odoo.conf, entrypoint, packages and some scripts
